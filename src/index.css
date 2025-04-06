@@ -1,0 +1,109 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-primary: 'Noto Sans', sans-serif;
+
+  --color-background--light: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+  --color-background--dark: linear-gradient(180deg, #040918 0%, #091540 100%);
+
+  --color-neutral-900: hsl(227, 75%, 14%);
+  --color-neutral-800: hsl(226, 25%, 17%);
+  --color-neutral-700: hsl(225, 23%, 24%);
+  --color-neutral-600: hsl(226, 11%, 37%);
+  --color-neutral-300: hsl(0, 0%, 78%);
+  --color-neutral-200: hsl(217, 61%, 90%);
+  --color-neutral-100: hsl(0, 0%, 93%);
+  --color-neutral-0: hsl(200, 60%, 99%);
+
+  --color-red-400: hsl(3, 86%, 64%);
+  --color-red-500: hsl(3, 71%, 56%);
+  --color-red-700: hsl(3, 77%, 44%);
+
+  --tracking-1: -0.2px;
+  --tracking-2: -0.3px;
+  --tracking-3: -0.5px;
+  --tracking-4: -1px;
+
+  --leading-1: 100%;
+  --leading-2: 120%;
+  --leading-3: 140%;
+
+  --text-xl: 2.125rem;
+  --text-xl--line-height: 100%;
+  --text-xl--font-weight: 700;
+  --text-lg: 1.25rem;
+  --text-base: 1rem;
+  --text-base--line-height: 140%;
+
+  --container-6xl: 73.125rem;
+
+  --radius-0: 0px;
+  --radius-4: 0.25rem;
+  --radius-6: 0.5rem;
+  --radius-8: 0.75rem;
+  --radius-10: 0.875rem;
+  --radius-12: 0.75rem;
+  --radius-16: 1rem;
+  --radius-20: 1.25rem;
+  --radius-24: 1.5rem;
+  --radius-full: 9999px;
+
+  --shadow-1: 0 2px 3px 0 hsl(213, 55%, 90%);
+}
+
+@layer base {
+  :root {
+    --logo: var(--color-neutral-900);
+  }
+
+  .dark {
+    --logo: var(--color-neutral-0);
+  }
+
+  html {
+    font-family: var(--font-primary);
+  }
+
+  body {
+    background: var(--color-background--light);
+    color: var(--color-neutral-900);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+
+    @variant dark {
+      background: var(--color-background--dark);
+      color: var(--color-neutral-0);
+    }
+  }
+}
+
+@utility wrapper {
+  @apply max-w-6xl mx-auto mt-6 md:mt-10 px-4 sm:px-8;
+}
+
+@utility flex-center-y {
+  @apply flex items-center;
+}
+
+@utility text-preset-1 {
+  @apply text-xl tracking-4;
+}
+@utility text-preset-2 {
+  @apply text-lg font-bold tracking-1 leading-2;
+}
+@utility text-preset-3 {
+  @apply text-lg font-normal tracking-2 leading-3;
+}
+
+@utility text-preset-4 {
+  @apply text-lg font-medium tracking-2 leading-3;
+}
+@utility text-preset-5 {
+  @apply text-base font-normal tracking-3;
+}
+@utility text-preset-6 {
+  @apply text-base font-medium tracking-3;
+}
