@@ -3,24 +3,63 @@
 
 @custom-variant dark (&:is(.dark *));
 
+:root {
+  --neutral-900: hsl(227, 75%, 14%);
+  --neutral-800: hsl(226, 25%, 17%);
+  --neutral-700: hsl(225, 23%, 24%);
+  --neutral-600: hsl(226, 11%, 37%);
+  --neutral-300: hsl(0, 0%, 78%);
+  --neutral-200: hsl(217, 61%, 90%);
+  --neutral-100: hsl(0, 0%, 93%);
+  --neutral-0: hsl(200, 60%, 99%);
+
+  --red-400: hsl(3, 86%, 64%);
+  --red-500: hsl(3, 71%, 56%);
+  --red-700: hsl(3, 77%, 44%);
+
+  --background: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+  --foreground: var(--neutral-900);
+  --logo: var(--neutral-900);
+  --destructive: var(--red-700);
+  --destructive-foreground: var(--neutral-0);
+  --border: var(--neutral-200);
+  --ring: var(--neutral-200);
+}
+
+.dark {
+  --background: linear-gradient(180deg, #040918 0%, #091540 100%);
+  --foreground: var(--neutral-0);
+  --logo: var(--neutral-0);
+  --destructive: var(--red-400);
+  --destructive-foreground: var(--neutral-900);
+  --border: var(--neutral-600);
+  --ring: var(--neutral-900);
+}
+
 @theme inline {
   --font-primary: 'Noto Sans', sans-serif;
 
-  --color-background--light: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
-  --color-background--dark: linear-gradient(180deg, #040918 0%, #091540 100%);
+  --color-neutral-900: var(--neutral-900);
+  --color-neutral-800: var(--neutral-800);
+  --color-neutral-700: var(--neutral-700);
+  --color-neutral-600: var(--neutral-600);
+  --color-neutral-300: var(--neutral-300);
+  --color-neutral-200: var(--neutral-200);
+  --color-neutral-100: var(--neutral-100);
+  --color-neutral-0: var(--neutral-0);
 
-  --color-neutral-900: hsl(227, 75%, 14%);
-  --color-neutral-800: hsl(226, 25%, 17%);
-  --color-neutral-700: hsl(225, 23%, 24%);
-  --color-neutral-600: hsl(226, 11%, 37%);
-  --color-neutral-300: hsl(0, 0%, 78%);
-  --color-neutral-200: hsl(217, 61%, 90%);
-  --color-neutral-100: hsl(0, 0%, 93%);
-  --color-neutral-0: hsl(200, 60%, 99%);
+  --color-red-400: var(--red-400);
+  --color-red-500: var(--red-500);
+  --color-red-700: var(--red-700);
 
-  --color-red-400: hsl(3, 86%, 64%);
-  --color-red-500: hsl(3, 71%, 56%);
-  --color-red-700: hsl(3, 77%, 44%);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-ring: var(--ring);
 
   --tracking-1: -0.2px;
   --tracking-2: -0.3px;
@@ -52,31 +91,24 @@
   --radius-full: 9999px;
 
   --shadow-1: 0 2px 3px 0 hsl(213, 55%, 90%);
+  --shadow-2: 0 1px 2px 0 hsla(217, 28%, 78%, 0.4);
 }
 
 @layer base {
-  :root {
-    --logo: var(--color-neutral-900);
-  }
-
-  .dark {
-    --logo: var(--color-neutral-0);
-  }
-
   html {
     font-family: var(--font-primary);
   }
 
   body {
-    background: var(--color-background--light);
-    color: var(--color-neutral-900);
+    background: var(--background);
+    color: var(--foreground);
     background-repeat: no-repeat;
     min-height: 100vh;
 
-    @variant dark {
+    /* @variant dark {
       background: var(--color-background--dark);
       color: var(--color-neutral-0);
-    }
+    } */
   }
 }
 
