@@ -1,9 +1,10 @@
 import FilterButtons from './components/FilterButtons';
 import Header from './components/Header';
 import ModeToggle from './components/ModeToggle';
-import { ThemeProvider } from './components/theme-provider';
+import { ThemeProvider } from './providers/theme.provider';
 import Logo from '@/assets/logo.svg?react';
 import Title from './components/Title';
+import Extensions from './components/ExtensionsList';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Title className="text-center">Extensions List</Title>
             <FilterButtons />
           </div>
+          <Extensions />
         </main>
       </div>
     </ThemeProvider>

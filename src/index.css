@@ -19,21 +19,34 @@
 
   --background: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
   --foreground: var(--neutral-900);
+  --muted: var(--neutral-600);
   --logo: var(--neutral-900);
+  --icon: var(--neutral-100);
   --destructive: var(--red-700);
   --destructive-foreground: var(--neutral-0);
+  --button: var(--neutral-0);
   --border: var(--neutral-200);
+  --border-secondary: var(--neutral-300);
   --ring: var(--neutral-200);
+  --card: var(--color-neutral-0);
+  --switch-shadow: 0 1px 3px 0 hsla(220, 29%, 5%, 0.15), 0 1px 2px -1px hsla(220, 29%, 5%, 0.15);
+
+  --extensions-grid-cols: repeat(auto-fill, minmax(17.5rem, 1fr));
 }
 
 .dark {
   --background: linear-gradient(180deg, #040918 0%, #091540 100%);
   --foreground: var(--neutral-0);
+  --muted: var(--neutral-300);
   --logo: var(--neutral-0);
+  --icon: var(--neutral-700);
   --destructive: var(--red-400);
   --destructive-foreground: var(--neutral-900);
+  --button: var(--neutral-700);
   --border: var(--neutral-600);
+  --border-secondary: var(--neutral-600);
   --ring: var(--neutral-900);
+  --card: var(--color-neutral-800);
 }
 
 @theme inline {
@@ -54,12 +67,18 @@
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+
+  --color-icon: var(--icon);
 
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
 
+  --color-button: var(--button);
   --color-border: var(--border);
+  --color-border-secondary: var(--border-secondary);
   --color-ring: var(--ring);
+  --color-card: var(--card);
 
   --tracking-1: -0.2px;
   --tracking-2: -0.3px;
@@ -92,6 +111,7 @@
 
   --shadow-1: 0 2px 3px 0 hsl(213, 55%, 90%);
   --shadow-2: 0 1px 2px 0 hsla(217, 28%, 78%, 0.4);
+  --shadow-3: 0 2px 2px 0 hsla(217, 34%, 82%, 0.2), 0 1px 5px 1px hsla(217, 34%, 82%, 0.2);
 }
 
 @layer base {
@@ -104,11 +124,6 @@
     color: var(--foreground);
     background-repeat: no-repeat;
     min-height: 100vh;
-
-    /* @variant dark {
-      background: var(--color-background--dark);
-      color: var(--color-neutral-0);
-    } */
   }
 }
 

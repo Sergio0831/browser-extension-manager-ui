@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Button from './ui/Button';
 
-type FilterButtonsProps = {};
+// type FilterButtonsProps = {};
 
 const filterButtons = ['All', 'Active', 'Inactive'];
 

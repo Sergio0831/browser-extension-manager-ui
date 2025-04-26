@@ -1,74 +1,86 @@
 [
-    {
-        "logo": "./assets/images/logo-devlens.svg",
-        "name": "DevLens",
-        "description": "Quickly inspect page layouts and visualize element boundaries.",
-        "isActive": true
-    },
-    {
-        "logo": "./assets/images/logo-style-spy.svg",
-        "name": "StyleSpy",
-        "description": "Instantly analyze and copy CSS from any webpage element.",
-        "isActive": true
-    },
-    {
-        "logo": "./assets/images/logo-speed-boost.svg",
-        "name": "SpeedBoost",
-        "description": "Optimizes browser resource usage to accelerate page loading.",
-        "isActive": false
-    },
-    {
-        "logo": "./assets/images/logo-json-wizard.svg",
-        "name": "JSONWizard",
-        "description": "Formats, validates, and prettifies JSON responses in-browser.",
-        "isActive": true
-    },
-    {
-        "logo": "./assets/images/logo-tab-master-pro.svg",
-        "name": "TabMaster Pro",
-        "description": "Organizes browser tabs into groups and sessions.",
-        "isActive": true
-    },
-    {
-        "logo": "./assets/images/logo-viewport-buddy.svg",
-        "name": "ViewportBuddy",
-        "description": "Simulates various screen resolutions directly within the browser.",
-        "isActive": false
-    },
-    {
-        "logo": "./assets/images/logo-markup-notes.svg",
-        "name": "Markup Notes",
-        "description": "Enables annotation and notes directly onto webpages for collaborative debugging.",
-        "isActive": true
-    },
-    {
-        "logo": "./assets/images/logo-grid-guides.svg",
-        "name": "GridGuides",
-        "description": "Overlay customizable grids and alignment guides on any webpage.",
-        "isActive": false
-    },
-    {
-        "logo": "./assets/images/logo-palette-picker.svg",
-        "name": "Palette Picker",
-        "description": "Instantly extracts color palettes from any webpage.",
-        "isActive": true
-    },
-    {
-        "logo": "./assets/images/logo-link-checker.svg",
-        "name": "LinkChecker",
-        "description": "Scans and highlights broken links on any page.",
-        "isActive": true
-    },
-    {
-        "logo": "./assets/images/logo-dom-snapshot.svg",
-        "name": "DOM Snapshot",
-        "description": "Capture and export DOM structures quickly.",
-        "isActive": false
-    },
-    {
-        "logo": "./assets/images/logo-console-plus.svg",
-        "name": "ConsolePlus",
-        "description": "Enhanced developer console with advanced filtering and logging.",
-        "isActive": true
-    }
-  ]
+  {
+    "id": "4c3a5f04-bd10-4d6c-bb2a-60b7088b1c7f",
+    "logo": "logo-devlens.svg",
+    "name": "DevLens",
+    "description": "Quickly inspect page layouts and visualize element boundaries.",
+    "isActive": true
+  },
+  {
+    "id": "e942a435-3b83-4d9e-846c-c3494b9929c0",
+    "logo": "logo-style-spy.svg",
+    "name": "StyleSpy",
+    "description": "Instantly analyze and copy CSS from any webpage element.",
+    "isActive": true
+  },
+  {
+    "id": "1a9faac2-26db-456d-86bb-01d05e70b96f",
+    "logo": "logo-speed-boost.svg",
+    "name": "SpeedBoost",
+    "description": "Optimizes browser resource usage to accelerate page loading.",
+    "isActive": false
+  },
+  {
+    "id": "8fd9ef11-7161-4e5b-9e1e-c843b8c6a61f",
+    "logo": "logo-json-wizard.svg",
+    "name": "JSONWizard",
+    "description": "Formats, validates, and prettifies JSON responses in-browser.",
+    "isActive": true
+  },
+  {
+    "id": "7d31473c-58c1-4659-8b90-3d33f2f29f06",
+    "logo": "logo-tab-master-pro.svg",
+    "name": "TabMaster Pro",
+    "description": "Organizes browser tabs into groups and sessions.",
+    "isActive": true
+  },
+  {
+    "id": "9df77250-b991-4d34-9af8-cd9fcbeef2b4",
+    "logo": "logo-viewport-buddy.svg",
+    "name": "ViewportBuddy",
+    "description": "Simulates various screen resolutions directly within the browser.",
+    "isActive": false
+  },
+  {
+    "id": "5a3fba92-bc16-4f20-9132-348bb81f1f77",
+    "logo": "logo-markup-notes.svg",
+    "name": "Markup Notes",
+    "description": "Enables annotation and notes directly onto webpages for collaborative debugging.",
+    "isActive": true
+  },
+  {
+    "id": "2f5976ee-1547-44fd-9d5d-7f9c5e68c1fd",
+    "logo": "logo-grid-guides.svg",
+    "name": "GridGuides",
+    "description": "Overlay customizable grids and alignment guides on any webpage.",
+    "isActive": false
+  },
+  {
+    "id": "e30e2b5e-7f02-4b84-bd4b-8f4735b4d9ef",
+    "logo": "logo-palette-picker.svg",
+    "name": "Palette Picker",
+    "description": "Instantly extracts color palettes from any webpage.",
+    "isActive": true
+  },
+  {
+    "id": "88c94c84-6b00-44d1-b776-cd7a87a7d205",
+    "logo": "logo-link-checker.svg",
+    "name": "LinkChecker",
+    "description": "Scans and highlights broken links on any page.",
+    "isActive": true
+  },
+  {
+    "id": "450bc1d1-745b-4cf7-905c-0f70c353bce0",
+    "logo": "logo-dom-snapshot.svg",
+    "name": "DOM Snapshot",
+    "description": "Capture and export DOM structures quickly.",
+    "isActive": false
+  },
+  {
+    "id": "1b9a2b2e-0d77-4214-8e2a-f06e3a51b469",
+    "logo": "logo-console-plus.svg",
+    "name": "ConsolePlus",
+    "description": "Enhanced developer console with advanced filtering and logging.",
+    "isActive": true
+  }
+]
