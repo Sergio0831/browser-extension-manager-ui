@@ -1,11 +1,20 @@
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Button from './ui/Button';
 import { Switch } from './ui/Switch';
-import { useExtensionsStore, type ExtensionType } from '@/store/extensionsStore';
+import { useExtensionsStore } from '@/store/extensionsStore';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
-const Extension = ({ id, logo, name, description }: ExtensionType) => {
+type ExtensionProps = {
+  id: string;
+};
+
+const Extension = ({ id }: ExtensionProps) => {
   const openModal = useExtensionsStore((state) => state.openModal);
+  const toggleExtension = useExtensionsStore((state) => state.toggleExtension);
+  const extension = useExtensionsStore((state) => state.extensions.find((ext) => ext.id === id));
+
+  if (!extension) return null;
+  const { name, logo, description, isActive } = extension;
 
   return (
     <div
@@ -32,7 +41,7 @@ const Extension = ({ id, logo, name, description }: ExtensionType) => {
           onClick={() => openModal(id)}>
           Remove
         </Button>
-        <Switch />
+        <Switch onCheckedChange={() => toggleExtension(id)} checked={!!isActive} />
       </div>
     </div>
   );

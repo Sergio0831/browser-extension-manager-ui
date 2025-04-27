@@ -11,6 +11,7 @@ import {
 } from './ui/Dialog';
 
 const ConfirmModal = () => {
+  const removeExtension = useExtensionsStore((state) => state.removeExtension);
   const isModalOpen = useExtensionsStore((state) => state.isModalOpen);
   const closeModal = useExtensionsStore((state) => state.closeModal);
   const extensionToRemove = useExtensionsStore((state) => state.extensionToRemove);
@@ -29,7 +30,8 @@ const ConfirmModal = () => {
             <Button
               variant="destructive"
               size="small"
-              className="ring-offset-card text-destructive-foreground">
+              className="ring-offset-card text-destructive-foreground"
+              onClick={() => removeExtension(extensionToRemove?.id || '')}>
               Remove
             </Button>
           </DialogClose>

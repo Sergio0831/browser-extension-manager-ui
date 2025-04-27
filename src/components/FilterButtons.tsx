@@ -1,12 +1,13 @@
-import { useState } from 'react';
 import Button from './ui/Button';
+import { Filter, useExtensionsStore } from '@/store/extensionsStore';
 
 // type FilterButtonsProps = {};
 
-const filterButtons = ['All', 'Active', 'Inactive'];
+const filterButtons: Filter[] = ['All', 'Active', 'Inactive'];
 
 const FilterButtons = () => {
-  const [filter, setFilter] = useState('All');
+  const filter = useExtensionsStore((state) => state.filter);
+  const setFilter = useExtensionsStore((state) => state.setFilter);
 
   return (
     <div className="flex gap-3">

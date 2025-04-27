@@ -128,7 +128,7 @@
 }
 
 @utility wrapper {
-  @apply max-w-6xl mx-auto mt-6 md:mt-10 px-4 sm:px-8;
+  @apply max-w-6xl mx-auto mt-6 mb-16 md:mt-10 px-4 sm:px-8;
 }
 
 @utility flex-center-y {

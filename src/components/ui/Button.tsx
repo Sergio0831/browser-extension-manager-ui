@@ -13,7 +13,7 @@ const buttonVariants = cva(
         transparent:
           'bg-transparent rounded-full text-preset-6 border border-border-secondary  hover:bg-destructive hover:border-transparent dark:hover:border-transparent hover:text-destructive-foreground',
         destructive:
-          'bg-destructive rounded-full  text-preset-6 border border-transparent hover:bg-red-500',
+          'bg-destructive rounded-full text-preset-6 border border-transparent hover:bg-red-500',
         icon: 'bg-icon hover:bg-border-secondary',
       },
       size: {
