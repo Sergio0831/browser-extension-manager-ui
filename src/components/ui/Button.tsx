@@ -9,13 +9,15 @@ const buttonVariants = cva(
       variant: {
         default: 'bg-button',
         primary:
-          'bg-button text-preset-3 border-1 border-border rounded-full shadow-2 dark:shadow-none hover:opacity-70 dark:hover:bg-neutral-600 dark:hover:opacity-100 aria-pressed:bg-destructive aria-pressed:text-destructive-foreground aria-pressed:shadow-none aria-pressed:border-transparent aria-pressed:hover:bg-red-500 dark:aria-pressed:hover:bg-red-500 aria-pressed:hover:opacity-100 ring-offset-ring',
+          'bg-button rounded-full text-preset-3 border-1 border-border shadow-2 dark:shadow-none hover:opacity-70 dark:hover:bg-neutral-600 dark:hover:opacity-100 aria-pressed:bg-destructive aria-pressed:text-destructive-foreground aria-pressed:shadow-none aria-pressed:border-transparent aria-pressed:hover:bg-red-500 dark:aria-pressed:hover:bg-red-500 aria-pressed:hover:opacity-100 ring-offset-ring',
         transparent:
-          'bg-transparent text-preset-6 border-1 border-border-secondary rounded-full hover:bg-destructive hover:border-transparent dark:hover:border-transparent hover:text-destructive-foreground',
+          'bg-transparent rounded-full text-preset-6 border border-border-secondary  hover:bg-destructive hover:border-transparent dark:hover:border-transparent hover:text-destructive-foreground',
+        destructive:
+          'bg-destructive rounded-full  text-preset-6 border border-transparent hover:bg-red-500',
         icon: 'bg-icon hover:bg-border-secondary',
       },
       size: {
-        default: 'rounded-full',
+        default: '',
         large: 'px-5 pt-2 pb-[0.625rem]',
         small: 'px-4 py-2',
         icon: 'rounded-12 w-[3.125rem] h-[3.125rem]',

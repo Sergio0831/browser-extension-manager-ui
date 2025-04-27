@@ -5,6 +5,7 @@ import { ThemeProvider } from './providers/theme.provider';
 import Logo from '@/assets/logo.svg?react';
 import Title from './components/Title';
 import Extensions from './components/ExtensionsList';
+import ConfirmModal from './components/ConfirmModal';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           </div>
           <Extensions />
         </main>
+        <ConfirmModal />
       </div>
     </ThemeProvider>
   );

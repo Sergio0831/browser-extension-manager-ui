@@ -1,10 +1,12 @@
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Button from './ui/Button';
 import { Switch } from './ui/Switch';
-import { type ExtensionType } from '@/store/extensionsStore';
+import { useExtensionsStore, type ExtensionType } from '@/store/extensionsStore';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const Extension = ({ id, logo, name, description }: ExtensionType) => {
+  const openModal = useExtensionsStore((state) => state.openModal);
+
   return (
     <div
       className="transition-colors grid bg-card h-[12.5rem] rounded-20 border-1 border-border p-5 shadow-3 dark:shadow-none"
@@ -23,7 +25,11 @@ const Extension = ({ id, logo, name, description }: ExtensionType) => {
         </div>
       </div>
       <div className="flex items-center justify-between mt-auto">
-        <Button variant="transparent" size="small" className="ring-offset-card">
+        <Button
+          variant="transparent"
+          size="small"
+          className="ring-offset-card"
+          onClick={() => openModal(id)}>
           Remove
         </Button>
         <Switch />
