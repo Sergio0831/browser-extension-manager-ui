@@ -6,8 +6,17 @@ import Logo from '@/assets/logo.svg?react';
 import Title from './components/Title';
 import Extensions from './components/ExtensionsList';
 import ConfirmModal from './components/ConfirmModal';
+import { useExtensionsStore } from './store/extensionsStore';
+import { useEffect } from 'react';
 
 function App() {
+  const { initializeStore } = useExtensionsStore();
+
+  // Initialize the store when the app loads
+  useEffect(() => {
+    initializeStore();
+  }, [initializeStore]);
+
   return (
     <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
       <div className="wrapper">

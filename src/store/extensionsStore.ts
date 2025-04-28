@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import extensionsData from '../data.json';
+import { persist } from 'zustand/middleware';
 
 export type ExtensionType = {
   id: string;
@@ -13,6 +14,8 @@ export type Filter = 'All' | 'Active' | 'Inactive';
 
 type ExtensionsStore = {
   extensions: ExtensionType[];
+  // Function to initialize the store with data from JSON
+  initializeStore: () => void;
   // Function to remove an extension by ID
   removeExtension: (id: string) => void;
   // Function to toggle the active state of an extension
@@ -28,40 +31,51 @@ type ExtensionsStore = {
   closeModal: () => void;
 };
 
-export const useExtensionsStore = create<ExtensionsStore>()((set) => ({
-  extensions: extensionsData,
-  filter: 'All',
+export const useExtensionsStore = create<ExtensionsStore>()(
+  persist(
+    (set) => ({
+      extensions: [],
+      filter: 'All',
 
-  removeExtension(extensionId) {
-    set((state) => ({
-      extensions: state.extensions.filter((ext) => ext.id !== extensionId),
-    }));
-  },
+      initializeStore() {
+        set(() => ({
+          extensions: extensionsData,
+        }));
+      },
 
-  toggleExtension(extensionId) {
-    set((state) => ({
-      extensions: state.extensions.map((ext) =>
-        ext.id === extensionId ? { ...ext, isActive: !ext.isActive } : ext,
-      ),
-    }));
-  },
+      removeExtension(extensionId) {
+        set((state) => ({
+          extensions: state.extensions.filter((ext) => ext.id !== extensionId),
+        }));
+      },
 
-  setFilter(filter) {
-    set({ filter });
-  },
+      toggleExtension(extensionId) {
+        set((state) => ({
+          extensions: state.extensions.map((ext) =>
+            ext.id === extensionId ? { ...ext, isActive: !ext.isActive } : ext,
+          ),
+        }));
+      },
 
-  extensionToRemove: null,
-  isModalOpen: false,
+      setFilter(filter) {
+        set({ filter });
+      },
 
-  openModal: (extensionId: string) =>
-    set((state) => ({
-      isModalOpen: true,
-      extensionToRemove: state.extensions.find((ext) => ext.id === extensionId) || null,
-    })),
-
-  closeModal: () =>
-    set({
-      isModalOpen: false,
       extensionToRemove: null,
+      isModalOpen: false,
+
+      openModal: (extensionId: string) =>
+        set((state) => ({
+          isModalOpen: true,
+          extensionToRemove: state.extensions.find((ext) => ext.id === extensionId)!,
+        })),
+
+      closeModal: () =>
+        set({
+          isModalOpen: false,
+          extensionToRemove: null,
+        }),
     }),
-}));
+    { name: 'extensions-storage' },
+  ),
+);

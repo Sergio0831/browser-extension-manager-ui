@@ -1,5 +1,6 @@
 import { useExtensionsStore } from '@/store/extensionsStore';
 import Extension from './Extension';
+import { AnimatePresence, motion } from 'motion/react';
 
 const Extensions = () => {
   const extensions = useExtensionsStore((state) => state.extensions);
@@ -13,9 +14,23 @@ const Extensions = () => {
 
   return (
     <div className="grid gap-3 grid-cols-(--extensions-grid-cols)">
-      {filteredExtensions.map((ext) => (
-        <Extension key={ext.id} id={ext.id} />
-      ))}
+      <AnimatePresence>
+        {filteredExtensions.map((ext) => (
+          <motion.div
+            key={ext.id}
+            layout="position"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{
+              opacity: { duration: 0.2 },
+              scale: { type: 'spring', stiffness: 500, damping: 30 },
+              layout: { duration: 0.4 },
+            }}>
+            <Extension key={ext.id} {...ext} />
+          </motion.div>
+        ))}
+      </AnimatePresence>
     </div>
   );
 };
