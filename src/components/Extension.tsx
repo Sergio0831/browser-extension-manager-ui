@@ -25,6 +25,8 @@ const Extension = ({ id, logo, name, description, isActive }: ExtensionProps) =>
           className="w-[60px] h-[60px] object-contain"
           src={`/images/${logo}`}
           alt={name}
+          width={60}
+          height={60}
           effect="blur"
           placeholderSrc={`/images/${logo}`}
         />
@@ -41,7 +43,11 @@ const Extension = ({ id, logo, name, description, isActive }: ExtensionProps) =>
           onClick={() => openModal(id)}>
           Remove
         </Button>
-        <Switch onCheckedChange={() => toggleExtension(id)} checked={isActive} />
+        <Switch
+          onCheckedChange={() => toggleExtension(id)}
+          checked={isActive}
+          aria-label={`Toggle ${name} extension`}
+        />
       </div>
     </div>
   );
