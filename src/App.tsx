@@ -1,3 +1,4 @@
+import { lazy, Suspense, useEffect } from 'react';
 import FilterButtons from './components/FilterButtons';
 import Header from './components/Header';
 import ModeToggle from './components/ModeToggle';
@@ -5,9 +6,8 @@ import { ThemeProvider } from './providers/theme.provider';
 import Logo from '@/assets/logo.svg?react';
 import Title from './components/Title';
 import Extensions from './components/ExtensionsList';
-import ConfirmModal from './components/ConfirmModal';
 import { useExtensionsStore } from './store/extensionsStore';
-import { useEffect } from 'react';
+const ConfirmModal = lazy(() => import('./components/ConfirmModal'));
 
 function App() {
   const { initializeStore } = useExtensionsStore();
@@ -31,7 +31,9 @@ function App() {
           </div>
           <Extensions />
         </main>
-        <ConfirmModal />
+        <Suspense fallback={null}>
+          <ConfirmModal />
+        </Suspense>
       </div>
     </ThemeProvider>
   );

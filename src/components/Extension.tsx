@@ -1,7 +1,7 @@
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Button from './ui/Button';
 import { Switch } from './ui/Switch';
-import { useExtensionsStore } from '@/store/extensionsStore';
+import { useStore } from '@/store/extensionsStore';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
 type ExtensionProps = {
@@ -13,8 +13,7 @@ type ExtensionProps = {
 };
 
 const Extension = ({ id, logo, name, description, isActive }: ExtensionProps) => {
-  const openModal = useExtensionsStore((state) => state.openModal);
-  const toggleExtension = useExtensionsStore((state) => state.toggleExtension);
+  const { openModal, toggleExtension } = useStore();
 
   return (
     <div
@@ -25,8 +24,6 @@ const Extension = ({ id, logo, name, description, isActive }: ExtensionProps) =>
           className="w-[60px] h-[60px] object-contain"
           src={`/images/${logo}`}
           alt={name}
-          width={60}
-          height={60}
           effect="blur"
           placeholderSrc={`/images/${logo}`}
         />

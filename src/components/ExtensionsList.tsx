@@ -1,10 +1,9 @@
-import { useExtensionsStore } from '@/store/extensionsStore';
+import { useStore } from '@/store/extensionsStore';
 import Extension from './Extension';
 import { AnimatePresence, motion } from 'motion/react';
 
 const Extensions = () => {
-  const extensions = useExtensionsStore((state) => state.extensions);
-  const filter = useExtensionsStore((state) => state.filter);
+  const { extensions, filter } = useStore();
 
   const filteredExtensions = extensions.filter((ext) => {
     if (filter === 'Active') return ext.isActive;

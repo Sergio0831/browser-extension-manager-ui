@@ -37,19 +37,19 @@ export const useExtensionsStore = create<ExtensionsStore>()(
       extensions: [],
       filter: 'All',
 
-      initializeStore() {
+      initializeStore: () => {
         set(() => ({
           extensions: extensionsData,
         }));
       },
 
-      removeExtension(extensionId) {
+      removeExtension: (extensionId) => {
         set((state) => ({
           extensions: state.extensions.filter((ext) => ext.id !== extensionId),
         }));
       },
 
-      toggleExtension(extensionId) {
+      toggleExtension: (extensionId) => {
         set((state) => ({
           extensions: state.extensions.map((ext) =>
             ext.id === extensionId ? { ...ext, isActive: !ext.isActive } : ext,
@@ -79,3 +79,19 @@ export const useExtensionsStore = create<ExtensionsStore>()(
     { name: 'extensions-storage' },
   ),
 );
+
+export const useStore = () => {
+  const store = useExtensionsStore((state) => state);
+  return {
+    ...store,
+    extensions: store.extensions,
+    filter: store.filter,
+    extensionToRemove: store.extensionToRemove,
+    initializeStore: store.initializeStore,
+    removeExtension: store.removeExtension,
+    toggleExtension: store.toggleExtension,
+    setFilter: store.setFilter,
+    openModal: store.openModal,
+    closeModal: store.closeModal,
+  };
+};

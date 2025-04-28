@@ -1,4 +1,4 @@
-import { useExtensionsStore } from '@/store/extensionsStore';
+import { useStore } from '@/store/extensionsStore';
 import Button from './ui/Button';
 import {
   Dialog,
@@ -11,10 +11,7 @@ import {
 } from './ui/Dialog';
 
 const ConfirmModal = () => {
-  const removeExtension = useExtensionsStore((state) => state.removeExtension);
-  const isModalOpen = useExtensionsStore((state) => state.isModalOpen);
-  const closeModal = useExtensionsStore((state) => state.closeModal);
-  const extensionToRemove = useExtensionsStore((state) => state.extensionToRemove);
+  const { isModalOpen, extensionToRemove, closeModal, removeExtension } = useStore();
 
   return (
     <Dialog open={isModalOpen} onOpenChange={closeModal}>

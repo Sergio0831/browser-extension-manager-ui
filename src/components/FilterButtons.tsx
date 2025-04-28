@@ -1,6 +1,6 @@
 import { motion, type Variants } from 'motion/react';
 import Button from './ui/Button';
-import { Filter, useExtensionsStore } from '@/store/extensionsStore';
+import { Filter, useStore } from '@/store/extensionsStore';
 
 const filterButtons: Filter[] = ['All', 'Active', 'Inactive'];
 
@@ -26,8 +26,7 @@ const buttonVariants: Variants = {
 };
 
 const FilterButtons = () => {
-  const filter = useExtensionsStore((state) => state.filter);
-  const setFilter = useExtensionsStore((state) => state.setFilter);
+  const { filter, setFilter } = useStore();
 
   return (
     <motion.div className="flex gap-3" initial="closed" animate="open" variants={containerVariants}>
